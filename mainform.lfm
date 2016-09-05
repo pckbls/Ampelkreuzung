@@ -1,0 +1,70 @@
+object FMain: TMainForm
+  Left = 628
+  Height = 406
+  Top = 187
+  Width = 538
+  Caption = 'Ampelkreuzung'
+  ClientHeight = 406
+  ClientWidth = 538
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 400
+  OnCreate = FormCreate
+  LCLVersion = '0.9.29'
+  object PaintBox: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonClose
+    Left = 5
+    Height = 366
+    Top = 5
+    Width = 528
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Around = 5
+    OnPaint = PaintBoxPaint
+    OnMouseUp = PaintBoxMouseUp
+  end
+  object ButtonClose: TBitBtn
+    AnchorSideRight.Control = PaintBox
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 445
+    Height = 30
+    Top = 376
+    Width = 88
+    Anchors = [akRight, akBottom]
+    Caption = '&Close'
+    Kind = bkClose
+    TabOrder = 0
+  end
+  object ButtonStart: TButton
+    AnchorSideLeft.Control = PaintBox
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 5
+    Height = 30
+    Top = 376
+    Width = 88
+    Anchors = [akLeft, akBottom]
+    Caption = 'Start'
+    OnClick = ButtonStartClick
+    TabOrder = 1
+  end
+  object ButtonStop: TButton
+    AnchorSideLeft.Control = ButtonStart
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 98
+    Height = 30
+    Top = 376
+    Width = 88
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 5
+    Caption = 'Stop'
+    OnClick = ButtonStopClick
+    TabOrder = 2
+  end
+end
