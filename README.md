@@ -1,5 +1,5 @@
 This is a veery old school project of mine called Ampelkreuzung (German, intersection with traffic lights)
-It simulates an intersection including traffic lights with cars.
+It simulates an intersection including traffic lights and cars.
 It is written in Delphi/Free Pascal and was built with the free Lazarus IDE.
 
 # Some background information
@@ -8,8 +8,8 @@ Back in those days I've played a lot with server side modding of Counter-Strike 
 This project's code adapts some of the ideas and techniques found in the GoldSrc engine:
 There's a world object, in my case an empty canvas that can be painted on.
 The world consists of entities that are placed somewhere on the canvas and may be visible or invisible.
-The engine uses /ticks/ to make the world vivid.
-Each tick the engine allows all entities to "think" thus make them do something.
+The engine uses *ticks* to make the world vivid.
+Each tick the engine allows all entities to *think* thus make them do something.
 Then the engine determines which entities overlap and allows them to handle touch events.
 This way I was able to allow my car entities make more or less intelligent decisions, e.g.:
 * All cars check if there's a car ahead of them. If so and the car ahead is driving slower, cars will attempt to lower their speed in order to avoid crashes.
